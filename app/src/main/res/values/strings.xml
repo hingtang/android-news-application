@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">NewsApplication</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_top_headline_news">Top headline news</string>
+    <string name="title_custom_news">My news</string>
+    <string name="title_profile">Profile</string>
+
+    <string name="no_internet_connection">"No internet connection!"</string>
+    <string name="no_data">"No data!"</string>
 </resources>
