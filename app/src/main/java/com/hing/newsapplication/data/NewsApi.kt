@@ -14,7 +14,7 @@ interface NewsApi {
         "Accept-Language: en"
     )
     @GET("v2/top-headlines")
-    fun getTopHeadlineNews(
+    fun getNewsList(
         @Query("country") country: String,
         @Query("q") keyword: String? = "",
         @Query("page") page: Int,

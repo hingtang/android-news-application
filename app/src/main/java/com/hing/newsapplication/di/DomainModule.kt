@@ -29,4 +29,8 @@ interface DomainModule {
     @Binds
     @Singleton
     fun getUsernameUseCase(getUsernameUseCase: GetUsernameUseCaseImpl): GetUsernameUseCase
+
+    @Binds
+    @Singleton
+    fun getCustomNewsUseCase(getCustomNewsUseCase: GetCustomNewsUseCaseImpl): GetCustomNewsUseCase
 }

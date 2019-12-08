@@ -11,13 +11,19 @@ import javax.inject.Inject
  */
 interface ApiGateway {
     fun getTopHeadlineNews(page: Int, pageSize: Int): Single<GetNewsResponse>
+    fun getCustomNews(keyword: String, page: Int, pageSize: Int): Single<GetNewsResponse>
 }
 
 class ApiGatewayImpl @Inject constructor(
     private val newsApi: NewsApi
 ) : ApiGateway {
     override fun getTopHeadlineNews(page: Int, pageSize: Int): Single<GetNewsResponse> {
-        return newsApi.getTopHeadlineNews("us", page = page, pageSize = pageSize, apiKey = BuildConfig.API_KEY)
+        return newsApi.getNewsList("us", page = page, pageSize = pageSize, apiKey = BuildConfig.API_KEY)
+            .firstOrError()
+    }
+
+    override fun getCustomNews(keyword: String, page: Int, pageSize: Int): Single<GetNewsResponse> {
+        return newsApi.getNewsList("us", keyword, page, pageSize, BuildConfig.API_KEY)
             .firstOrError()
     }
 }

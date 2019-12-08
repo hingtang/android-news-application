@@ -9,6 +9,7 @@ import javax.inject.Inject
  */
 interface NewsRepository {
     fun getTopHeadlineNews(page: Int, pageSize: Int): Single<GetNewsResponse>
+    fun getCustomNews(keyword: String, page: Int, pageSize: Int): Single<GetNewsResponse>
 }
 
 class NewsRepositoryImpl @Inject constructor(
@@ -16,5 +17,9 @@ class NewsRepositoryImpl @Inject constructor(
 ) : NewsRepository {
     override fun getTopHeadlineNews(page: Int, pageSize: Int): Single<GetNewsResponse> {
         return apiGateway.getTopHeadlineNews(page, pageSize)
+    }
+
+    override fun getCustomNews(keyword: String, page: Int, pageSize: Int): Single<GetNewsResponse> {
+        return apiGateway.getCustomNews(keyword, page, pageSize)
     }
 }
