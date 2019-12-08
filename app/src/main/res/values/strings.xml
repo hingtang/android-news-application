@@ -5,6 +5,18 @@
     <string name="title_profile">Profile</string>
     <string name="title_news_detail">News Detail</string>
 
+    <string name="username">Username</string>
+    <string name="keyword">Keyword</string>
+    <string name="register">Register</string>
+    <string name="save">Save</string>
+
     <string name="no_internet_connection">"No internet connection!"</string>
     <string name="no_data">"No data!"</string>
+
+    <string-array name="news_list_keywords">
+        <item>Bitcoin</item>
+        <item>Apple</item>
+        <item>Earthquake</item>
+        <item>Animal</item>
+    </string-array>
 </resources>
