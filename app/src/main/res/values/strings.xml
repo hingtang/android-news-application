@@ -3,6 +3,7 @@
     <string name="title_top_headline_news">Top headline news</string>
     <string name="title_custom_news">My news</string>
     <string name="title_profile">Profile</string>
+    <string name="title_news_detail">News Detail</string>
 
     <string name="no_internet_connection">"No internet connection!"</string>
     <string name="no_data">"No data!"</string>

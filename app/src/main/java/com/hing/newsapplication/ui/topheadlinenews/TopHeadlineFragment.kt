@@ -1,5 +1,6 @@
 package com.hing.newsapplication.ui.topheadlinenews
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,11 +17,14 @@ import com.hing.newsapplication.data.Article
 import com.hing.newsapplication.databinding.TopHeadlineFragmentBinding
 import com.hing.newsapplication.listeners.OnLoadMoreListener
 import com.hing.newsapplication.navigators.NewsItemNavigator
+import com.hing.newsapplication.ui.newsdetail.NewsDetailActivity
+import com.hing.newsapplication.ui.newsdetail.NewsDetailActivity.Companion.EXTRA_ARTICLE
 import com.hing.newsapplication.utils.DateTimeHelper
 import com.hing.newsapplication.utils.NetworkHelper
 import com.hing.newsapplication.utils.showSnackbar
 import com.hing.newsapplication.utils.showToast
 import dagger.android.support.AndroidSupportInjection
+import kotlinx.android.synthetic.main.top_headline_fragment.*
 import javax.inject.Inject
 
 class TopHeadlineFragment : Fragment(), NewsItemNavigator {
@@ -62,6 +66,9 @@ class TopHeadlineFragment : Fragment(), NewsItemNavigator {
     }
 
     override fun openNewsDetail(article: Article) {
+        activity?.startActivity(Intent(activity, NewsDetailActivity::class.java).apply {
+            putExtra(EXTRA_ARTICLE, article)
+        })
     }
 
     private fun initData() {
